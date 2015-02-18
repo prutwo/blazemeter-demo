@@ -38,7 +38,7 @@
     <div class="container">
         <h1>Welcome to the Simple Travel Agency!</h1>
         <p>The is a sample site you can test with BlazMeter! </p>
-        <p>Check out our <a href="vacation.html">destination of the week.</a></p>
+        <p>Check out our <a href="vacation.html">destination of the week!!!</a></p>
     </div>
 </div>
 
