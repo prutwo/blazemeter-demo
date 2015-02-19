@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export BZA=http://a.blazemeter.com
+export BZA=https://a.blazemeter.com
 export BZA_API_KEY=3e777ceb0863a9700800
 export TEST_ID=5032643
 
