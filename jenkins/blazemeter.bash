@@ -1,11 +1,11 @@
 #!/bin/bash
 
 export BZA=http://a.blazemeter.com
-export BZA_API_KEY=mGZMeSfNwsK0KBoM
+export BZA_API_KEY=3e777ceb0863a9700800
 export TEST_ID=5032643
 
 echo -n "Running test on " $BZA
-echo "Test ID = " $TEST_ID
+echo -n "Test ID = " $TEST_ID
 
 SESSION_ID=$(curl --silent --insecure ${BZA}/api/latest/tests/${TEST_ID}/start?api_key=${BZA_API_KEY} | jq '.result.sessionsId[]' | tr -d \")
 echo "Test started .."
