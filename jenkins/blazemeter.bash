@@ -4,8 +4,8 @@ export BZA=https://a.blazemeter.com
 export BZA_API_KEY=3e777ceb0863a9700800
 export TEST_ID=5032643
 
-echo -n "Running test on " $BZA
-echo -n "Test ID = " $TEST_ID
+echo "Running test on " $BZA
+echo "Test ID = " $TEST_ID
 
 SESSION_ID=$(curl --silent --insecure ${BZA}/api/latest/tests/${TEST_ID}/start?api_key=${BZA_API_KEY} | jq '.result.sessionsId[]' | tr -d \")
 echo "Test started .."
@@ -14,7 +14,7 @@ TEST_RUN_STATUS=$(curl --silent --insecure ${BZA}/api/latest/sessions/${SESSION_
 
 while [ "$TEST_RUN_STATUS" != "ENDED" ]; do
         echo "Test status = " $TEST_RUN_STATUS
-        echo "Report is visible here: ${BZA}/app/#report/${SESSION_ID}/loadreport"
+        echo "Report is visible here: ${BZA}/app/#reports/${SESSION_ID}/loadreport"
         sleep 30
         echo "Trying again .."
 	TEST_RUN_STATUS=$(curl --silent --insecure ${BZA}/api/latest/sessions/${SESSION_ID}?api_key=${BZA_API_KEY} | jq '.result.status' | tr -d \" )
