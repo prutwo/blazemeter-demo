@@ -41,7 +41,7 @@ Order made at:
 
 <?php
 // sleep for 3 seconds
-sleep(7);
+sleep(1);
 
 // wake up !
 echo date(DATE_RFC2822) . "\n";
