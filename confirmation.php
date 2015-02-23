@@ -40,7 +40,7 @@
 Order made at:  
 
 <?php
-// sleep for 10 seconds
+// sleep for 3 seconds
 sleep(3);
 
 // wake up !
