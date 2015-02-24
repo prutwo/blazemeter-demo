@@ -22,19 +22,7 @@ caps4['platform'] = 'Windows 8.1'
 caps4['version'] = '11.0'
 caps4["name"] = "Selenium on Sauce on IE11Win8.1"
 
-caps5 = Selenium::WebDriver::Remote::Capabilities.android
-caps5['platform'] = 'Linux'
-caps5['version'] = '4.4'
-caps5['deviceName'] = 'Android Emulator'
-caps5['device-orientation'] = 'portrait'
-caps5["name"] = "Android testing made awesome!"
-
-caps6 = Selenium::WebDriver::Remote::Capabilities.chrome
-caps6['platform'] = 'OS X 10.10'
-caps6['version'] = '38.0'
-caps6["name"] = "Sauce has you covered C38OSX10.10"
-
-caps = [caps1, caps2, caps3, caps4, caps5, caps6]
+caps = [caps1, caps2, caps3, caps4]
 
 caps.peach do |cap|
 driver = Selenium::WebDriver.for(:remote,
@@ -96,10 +84,6 @@ driver.find_element(:id, "nameOnCard").click
 driver.find_element(:id, "nameOnCard").clear
 driver.find_element(:id, "nameOnCard").send_keys "Abhijit Pendyal"
 driver.find_element(:css, "input.btn.btn-primary").click
-
-if not driver.find_element(:tag_name, "html").text.include? "Thank you for your purchase."
-    print "verifyTextPresent failed"
-end
 
 driver.quit
 end
