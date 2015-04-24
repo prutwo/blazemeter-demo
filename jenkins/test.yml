@@ -1,4 +1,12 @@
 ---
+modules:
+  blazemeter:
+    token: 3e777ceb0863a9700800
+
+reporting:
+  - module: blazemeter
+    test: Taurus Demo
+
 execution:
   concurrency: 100
   ramp-up: 30s
