@@ -1,8 +1,8 @@
 ---
 execution:
-  concurrency: 200
-  ramp-up: 5m
-  hold-for: 5m
+  concurrency: 100
+  ramp-up: 30s
+  hold-for: 30s
 
   scenario:
     think-time: 0.5s
