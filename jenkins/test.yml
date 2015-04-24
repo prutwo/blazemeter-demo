@@ -8,9 +8,9 @@ reporting:
     test: Taurus Demo
 
 execution:
-  concurrency: 100
-  ramp-up: 30s
-  hold-for: 30s
+  concurrency: 200
+  ramp-up: 5m
+  hold-for: 5m
 
   scenario:
     think-time: 0.5s
