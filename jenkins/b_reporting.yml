@@ -1,0 +1,8 @@
+---
+modules:
+  blazemeter:
+    token: 3e777ceb0863a9700800
+
+reporting:
+  - module: blazemeter
+    test: Taurus Demo B
