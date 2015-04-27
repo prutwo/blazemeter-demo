@@ -11,7 +11,7 @@ reporting:
     data-source: pass-fail
   - module: fail-criteria
     criterias:
-      - avg-rt>6000ms for 10s, continue as failed
+      - avg-rt>6000ms for 3s, continue as failed
       - avg-rt>5s for 1m, continue as failed
       - avg-rt of Confirmation>3s for 1m, continue as failed
 
