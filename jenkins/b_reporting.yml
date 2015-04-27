@@ -6,3 +6,8 @@ modules:
 reporting:
   - module: blazemeter
     test: Taurus Demo B
+
+execution:
+#  concurrency: 200
+  ramp-up: 120s
+  hold-for: 120s
