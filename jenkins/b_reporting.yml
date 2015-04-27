@@ -2,12 +2,18 @@
 modules:
   blazemeter:
     token: 3e777ceb0863a9700800
+    browser-open: off
+  console:
+    disable: true
 
 reporting:
   - module: blazemeter
     test: Taurus Demo B
 
 execution:
+  scenario:
+    script: ./jenkins/_blazedemo_v3.jmx
 #  concurrency: 200
   ramp-up: 120s
   hold-for: 120s
+
