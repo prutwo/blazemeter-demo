@@ -2,20 +2,17 @@
 modules:
   blazemeter:
     token: 3e777ceb0863a9700800
-    browser-open: off
-  console:
-    disable: true
 
 reporting:
   - module: blazemeter
     test: Taurus Demo B
-  - module: fail-criteria
-    criterias:
-      - avg-rt>150ms for 10s, continue as failed
-      - avg-rt>4s for 1m, continue as failed
   - module: junit-xml
     filename: junit.xml
     data-source: pass-fail
+  - module: fail-criteria
+    criterias:
+      - avg-rt>6000ms for 10s, continue as failed
+      - avg-rt>4s for 1m, continue as failed
 
 execution:
   scenario:
