@@ -7,7 +7,7 @@ reporting:
   - module: blazemeter
     test: Taurus Demo B
   - module: junit-xml
-    filename: junit.xml
+    filename: ./junit.xml
     data-source: pass-fail
   - module: fail-criteria
     criterias:
