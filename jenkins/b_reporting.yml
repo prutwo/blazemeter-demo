@@ -11,13 +11,13 @@ reporting:
     data-source: pass-fail
   - module: fail-criteria
     criterias:
-      - avg-rt>6000ms for 3s, continue as failed
+      - avg-rt>6000ms for 10s, continue as failed
       - avg-rt>5s for 1m, continue as failed
-      - avg-rt of Confirmation>3s for 1m, continue as failed
+      - avg-rt of Confirmation>5s for 30s, continue as failed
 
 execution:
   scenario:
     script: ./jenkins/_blazedemo_v3.jmx
-  concurrency: 300
-  ramp-up: 300s
-  hold-for: 180s
+  concurrency: 100
+  ramp-up: 180s
+  hold-for: 120s
