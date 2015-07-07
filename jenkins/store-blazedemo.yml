@@ -1,0 +1,60 @@
+---
+scenarios:
+  blazedemo:
+    data-sources: 
+      - path:               locations.csv  
+        quoted:             true 
+    headers: 
+      Accept:               text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+      User-Agent:           Mozilla/5.0(Macintosh;IntelMacOSX10_10_3)AppleWebKit/537.36(KHTML,likeGecko)Chrome/43.0.2357.65Safari/537.36
+      Accept-Encoding:      gzip,deflate,sdch
+      Accept-Language:      en-US,en;q=0.8,he;q=0.6
+    think-time:             150ms
+    #timeout:                31000ms  
+    default-domain:         "blazedemo.com"
+    requests:
+      - url:                /
+        label:              "homepage (${fromPort})"
+      - url:                reserve.php
+        method:             POST
+        body:
+          fromPort:         ${fromPort}
+          toPort:           ${toPort}
+        headers:
+          Referer:          http://blazedemo.com/
+          Origin:           http://blazedemo.com
+          Content-Type:     application/x-www-form-urlencoded
+        label:              reserve
+      - url:                purchase.php
+        method:             POST
+        body: 
+          airline:          ${airline}
+          flight:           ${flight}
+          fromPort:         ${fromPort}
+          price:            ${price}
+          toPort:           ${toPort}
+        headers:
+          Referer:          http://blazedemo.com/reserve.php
+          Origin:           http://blazedemo.com
+          Content-Type:     application/x-www-form-urlencoded
+        label:              purchase
+      - url:                confirmation.php
+        method:             POST
+        body: 
+          address:          ${address}
+          cardType:         ${cardType}
+          city:             ${city}
+          creditCardNumber: ${creditCardNumber}
+          inputName:        ${inputName}
+          nameOnCard:       ${nameOnCard}
+          rememberMe:       ${rememberMe}
+          state:            ${state}
+          zipCode:          ${zipCode}
+        label:              confirmation
+        headers:
+          Referer:          http://blazedemo.com/purchase.php
+          Origin:           http://blazedemo.com
+          Content-Type:     application/x-www-form-urlencoded
+execution:
+  scenario:                 blazedemo
+  hold-for:                 1m
